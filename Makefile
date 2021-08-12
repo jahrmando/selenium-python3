@@ -15,6 +15,7 @@ publish:
 validate:
 	@echo Running tests on $(PROJECT)
 	docker run -ti $(PROJECT):$(DOCKERTAG) python /tmp/chrome.py || exit 1;
+	docker run -ti $(PROJECT):$(DOCKERTAG) python /tmp/firefox.py || exit 1;
 
 all: build validate publish
 

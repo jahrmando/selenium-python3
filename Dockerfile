@@ -65,5 +65,6 @@ RUN pip install --upgrade pip
 RUN pip install selenium==3.14.0
 
 COPY --chown=roboto:roboto test/chrome.py /tmp
+COPY --chown=roboto:roboto test/firefox.py /tmp
 
 ENTRYPOINT ["/bin/bash"]
