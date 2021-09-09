@@ -58,8 +58,10 @@ ENV HOME /app
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
-RUN pyenv install 3.6.8
-RUN pyenv global 3.6.8
+ARG PYVERSION=3.8.2
+
+RUN pyenv install $PYVERSION
+RUN pyenv global $PYVERSION
 RUN pyenv rehash
 RUN pip install --upgrade pip
 RUN pip install selenium==3.14.0
